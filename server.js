@@ -7,7 +7,6 @@ import handleRegister from "./controllers/register.js";
 import handleSignin from "./controllers/signin.js";
 import handleProfileGet from "./controllers/profile.js";
 import { handleImage, handleApiCall } from "./controllers/image.js";
-import gi from ('gitignore');
 
 const db = knex({
   client: "pg",
