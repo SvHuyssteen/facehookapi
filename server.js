@@ -1,12 +1,15 @@
 import e from "express";
 import express from "express";
 import bcrypt from "bcrypt-nodejs";
+import dotenv from "dotenv";
 import cors from "cors";
 import knex from "knex";
 import handleRegister from "./controllers/register.js";
 import handleSignin from "./controllers/signin.js";
 import handleProfileGet from "./controllers/profile.js";
 import { handleImage, handleApiCall } from "./controllers/image.js";
+dotenv.config();
+const dbPassword = process.env.DBPASSWORD;
 
 const db = knex({
   client: "pg",
@@ -14,7 +17,7 @@ const db = knex({
     host: "127.0.0.1",
     port: 5432,
     user: "postgres",
-    password: "Karools0132433178",
+    password: dbPassword,
     database: "facehook",
   },
 });
