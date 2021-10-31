@@ -14,10 +14,10 @@ const dbPassword = process.env.DBPASSWORD;
 const db = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
+    host: "postgresql-aerodynamic-52616",
     port: 5432,
     user: "postgres",
-    password: dbPassword,
+    password: "",
     database: "facehook",
   },
 });
