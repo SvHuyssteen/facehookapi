@@ -10,15 +10,13 @@ import handleProfileGet from "./controllers/profile.js";
 import { handleImage, handleApiCall } from "./controllers/image.js";
 dotenv.config();
 const dbPassword = process.env.DBPASSWORD;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const db = knex({
   client: "pg",
   connection: {
-    host: "postgresql-aerodynamic-52616",
-    port: 5432,
-    user: "postgres",
-    password: "",
-    database: "facehook",
+    host: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
